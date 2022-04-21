@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   web:
+    image: documents_compress
     build:
       context: ./
       target: production
@@ -13,3 +14,10 @@ services:
     environment:
       NODE_ENV: development
       DEBUG: nodejs-docker-express:*
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true
+    driver: bridge

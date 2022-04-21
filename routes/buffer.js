@@ -10,7 +10,7 @@ const upload = multer({ storage });
 router.post("/buffer", upload.single('file'), async (req, res) => {
   const { buffer, originalname, size } = req.file;
 
-  await sharp(buffer)
+  await sharp(buffer, { failOnError: false })
   .webp({
       quality: 60
   })
