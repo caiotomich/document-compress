@@ -59,3 +59,7 @@ typings/
 
 # next.js build output
 .next
+
+# Storage files
+storage/pdfs/*.pdf
+storage/uploads/*.jpeg
